@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Portfolio of Yash Verma, a Full Stack Web Developer specializing in React, Node.js, PHP, Laravel, and WordPress.",
     images: ["/images/yash-verma-profile.jpeg"], // Use your profile image
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
