@@ -52,7 +52,7 @@ export default function ProjectsPage() {
   ]
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-red-900 via-red-800 to-red-900 pt-20 md:pt-24 pb-12 relative overflow-hidden">
+    <section className="min-h-screen bg-gradient-to-b from-red-900 via-red-800 to-red-900 pt-24 pb-12 relative overflow-hidden">
       <div className="floating-shapes"></div>
       <div className="absolute inset-0 bg-black/40"></div>
 

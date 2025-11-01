@@ -9,7 +9,7 @@ import { ContactForm } from "@/components/contact-form"
 
 export default function ContactPage() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-background pt-20 md:pt-24">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-up">
           <div className="space-y-2">
