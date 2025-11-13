@@ -18,32 +18,26 @@ export function Header() {
   ]
 
   return (
-    <header className="fixed top-0 z-50 w-full glass-effect border-b border-silver-400/30 bg-black/40 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full bg-black/80 backdrop-blur-sm border-b border-gray-800">
       <div className="container flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 text-2xl font-bold">
-          <span className="text-white font-bold drop-shadow-lg">Yashu</span>
+        <Link href="/" className="text-xl md:text-2xl font-bold text-white">
+          Yashu
         </Link>
 
         <nav className="hidden gap-8 md:flex">
-          {navLinks.map((link, index) => (
+          {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-semibold text-white transition-all duration-300 hover:text-silver-300 hover:scale-105 relative group drop-shadow-md"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-silver-400 to-red-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
           <Dialog>
             <DialogTrigger asChild>
-              <Button
-                variant="ghost"
-                className="text-sm font-semibold text-white transition-all duration-300 hover:text-silver-300 hover:scale-105 relative group drop-shadow-md"
-              >
+              <Button variant="ghost" className="text-sm font-medium text-gray-300 hover:text-white">
                 Contact Me
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-silver-400 to-red-500 transition-all duration-300 group-hover:w-full"></span>
               </Button>
             </DialogTrigger>
             <ContactForm />
@@ -51,17 +45,13 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-          <Button
-            asChild
-            className="bg-gradient-to-r from-red-600 to-crimson-600 hover:from-red-700 hover:to-crimson-700 text-white font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-white/20"
-          >
+          <Button asChild className="bg-red-600 hover:bg-red-700 text-white font-bold">
             <a
-              href="https://drive.google.com/file/d/1vPzsvoEdnsEM9-ZFRPct1W9uWplxeUac/view?usp=sharing"
+              href="https://drive.google.com/file/d/15n22j-c3UVXGvE3M1ml4GQHQMesHianf/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2"
             >
-              <ExternalLink className="h-4 w-4" />
+              <ExternalLink className="h-4 w-4 mr-2" />
               View Resume
             </a>
           </Button>
@@ -69,22 +59,18 @@ export function Header() {
 
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              className="md:hidden glass-effect border-silver-400/50 bg-transparent"
-            >
+            <Button variant="outline" size="icon" className="md:hidden border-gray-700 bg-transparent">
               <MenuIcon className="h-6 w-6 text-white" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-gradient-to-b from-red-900 to-red-800 border-silver-400/30">
+          <SheetContent side="right" className="bg-gray-900 border-gray-800">
             <div className="flex flex-col gap-6 py-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-semibold text-white hover:text-silver-300 transition-colors"
+                  className="text-lg font-medium text-gray-300 hover:text-white"
                   onClick={() => setIsSheetOpen(false)}
                 >
                   {link.name}
@@ -94,7 +80,7 @@ export function Header() {
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="text-lg font-semibold justify-start text-white hover:text-silver-300"
+                    className="justify-start text-lg font-medium text-gray-300 hover:text-white"
                     onClick={() => setIsSheetOpen(false)}
                   >
                     Contact Me
@@ -102,24 +88,20 @@ export function Header() {
                 </DialogTrigger>
                 <ContactForm />
               </Dialog>
-              <Button
-                asChild
-                className="bg-gradient-to-r from-red-600 to-crimson-600 hover:from-red-700 hover:to-crimson-700 text-white font-bold"
-              >
+              <Button asChild className="bg-red-600 hover:bg-red-700 text-white font-bold">
                 <a
-                  href="https://drive.google.com/file/d/1vPzsvoEdnsEM9-ZFRPct1W9uWplxeUac/view?usp=sharing"
+                  href="https://drive.google.com/file/d/15n22j-c3UVXGvE3M1ml4GQHQMesHianf/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsSheetOpen(false)}
-                  className="flex items-center gap-2"
                 >
-                  <ExternalLink className="h-4 w-4" />
+                  <ExternalLink className="h-4 w-4 mr-2" />
                   View Resume
                 </a>
               </Button>
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 mt-4 pt-4 border-t border-gray-700">
                 <Link href="https://github.com/yashuverma786" target="_blank" rel="noopener noreferrer">
-                  <Button variant="ghost" size="icon" className="text-white hover:text-silver-300">
+                  <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white">
                     <Github className="h-6 w-6" />
                     <span className="sr-only">GitHub</span>
                   </Button>
@@ -129,13 +111,13 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="ghost" size="icon" className="text-white hover:text-silver-300">
+                  <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white">
                     <Linkedin className="h-6 w-6" />
                     <span className="sr-only">LinkedIn</span>
                   </Button>
                 </Link>
                 <Link href="mailto:yashverma.u786@gmail.com">
-                  <Button variant="ghost" size="icon" className="text-white hover:text-silver-300">
+                  <Button variant="ghost" size="icon" className="text-gray-300 hover:text-white">
                     <Mail className="h-6 w-6" />
                     <span className="sr-only">Email</span>
                   </Button>

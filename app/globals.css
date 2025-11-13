@@ -4,65 +4,31 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 0 0% 75%; /* Silver */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 15 15% 15%;
+    --card-foreground: 0 0% 100%;
+    --popover: 15 15% 15%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 93% 47%;
     --primary-foreground: 0 0% 0%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
+    --secondary: 0 72% 51%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --accent: 45 93% 47%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 0 0% 75%; /* Silver */
-
-    --radius: 0.75rem;
+    --ring: 45 93% 47%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 0 0% 75%; /* Silver */
-    --primary-foreground: 0 0% 0%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 0 0% 75%; /* Silver */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
   }
 }
 
@@ -70,153 +36,21 @@
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground min-h-screen flex flex-col;
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-silver-400 via-silver-500 to-silver-600 bg-clip-text text-transparent;
-  }
-
-  .text-silver-dark {
-    @apply text-silver-600;
-  }
-
-  .glass-effect {
-    @apply backdrop-blur-sm bg-white/5 border border-white/10;
-  }
-
-  @media (min-width: 768px) {
-    .glass-effect {
-      @apply backdrop-blur-md bg-white/10 border border-white/20;
-    }
-  }
-
-  .floating-shapes {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .floating-shapes::before,
-  .floating-shapes::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(45deg, rgba(192, 192, 192, 0.1), rgba(220, 20, 60, 0.15));
-    animation: float 8s ease-in-out infinite;
-  }
-
-  .floating-shapes::before {
-    width: 300px;
-    height: 300px;
-    top: 10%;
-    left: 10%;
-    animation-delay: -2s;
-  }
-
-  .floating-shapes::after {
-    width: 200px;
-    height: 200px;
-    bottom: 10%;
-    right: 10%;
-    animation-delay: -4s;
-  }
-
-  /* Performance optimizations */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-    will-change: transform;
-  }
-
-  .animate-bounce {
-    animation: bounce 2s infinite;
-    will-change: transform;
-  }
-
-  /* Smooth scrolling for better performance */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Reduce motion for users who prefer it */
-  @media (prefers-reduced-motion: reduce) {
-    .animate-float,
-    .animate-bounce,
-    .animate-fade-in-up,
-    .animate-scale-in,
-    .animate-slide-in-left,
-    .animate-slide-in-right {
-      animation: none;
-    }
-
-    .floating-shapes::before,
-    .floating-shapes::after {
-      animation: none;
-    }
-  }
-
-  /* Mobile optimizations */
+  /* Remove heavy animations on mobile */
   @media (max-width: 768px) {
-    .floating-shapes::before {
-      width: 150px;
-      height: 150px;
-    }
-
-    .floating-shapes::after {
-      width: 100px;
-      height: 100px;
-    }
-  }
-
-  /* Performance optimizations for mobile */
-  @media (max-width: 768px) {
-    .animate-float,
-    .animate-glow,
-    .animate-gradient-shift {
-      animation-duration: 4s;
-    }
-
-    .floating-shapes::before,
-    .floating-shapes::after {
-      animation-duration: 6s;
-    }
-  }
-
-  /* Reduce animations on low-end devices */
-  @media (prefers-reduced-motion: reduce) {
-    .animate-float,
-    .animate-bounce,
-    .animate-fade-in-up,
-    .animate-scale-in,
-    .animate-slide-in-left,
-    .animate-slide-in-right,
-    .animate-glow,
-    .animate-gradient-shift {
-      animation: none;
-    }
-
-    .floating-shapes::before,
-    .floating-shapes::after {
-      animation: none;
-    }
-  }
-
-  /* Smooth scrolling optimization */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Better mobile touch targets */
-  @media (max-width: 768px) {
-    button,
-    a {
-      min-height: 44px;
-      min-width: 44px;
+    * {
+      animation-duration: 0.2s !important;
     }
   }
 }
