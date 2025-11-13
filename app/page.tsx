@@ -68,7 +68,7 @@ export default function HomePage() {
   ]
 
   const stats = [
-    { icon: <Award className="h-8 w-8" />, number: "6+", label: "Months Experience" },
+    { icon: <Award className="h-8 w-8" />, number: "1 yr +", label: "Experience" },
     { icon: <Code className="h-8 w-8" />, number: "5+", label: "Projects Completed" },
     { icon: <Users className="h-8 w-8" />, number: "100%", label: "Client Satisfaction" },
     { icon: <Coffee className="h-8 w-8" />, number: "500+", label: "Cups of Coffee" },
@@ -110,7 +110,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Floating Animated Elements */}
-      <div className="fixed inset-0 pointer-events-none z-10">
+      <div className="hidden md:block fixed inset-0 pointer-events-none z-10">
         <div className="absolute top-20 left-10 animate-float">
           <Star className="h-6 w-6 text-silver-400/30" style={{ animationDelay: "0s" }} />
         </div>
@@ -141,7 +141,7 @@ export default function HomePage() {
       <FloatingTalkButton />
 
       {/* Hero Section with Parallax */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-red-silver animate-gradient-shift bg-[length:400%_400%]">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-red-silver animate-gradient-shift bg-[length:400%_400%] pt-20 md:pt-24">
         <div className="floating-shapes"></div>
 
         {/* Parallax Background Elements */}
@@ -240,7 +240,7 @@ export default function HomePage() {
                 className="w-full sm:w-auto glass-effect border-2 border-white/70 text-white hover:bg-white/20 hover:text-silver-200 hover:border-silver-300/70 group bg-transparent transition-all duration-300 font-bold shadow-2xl transform hover:scale-105 backdrop-blur-sm"
               >
                 <a
-                  href="https://drive.google.com/file/d/1vPzsvoEdnsEM9-ZFRPct1W9uWplxeUac/view?usp=sharing"
+                  href="https://drive.google.com/file/d/15n22j-c3UVXGvE3M1ml4GQHQMesHianf/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
@@ -255,21 +255,13 @@ export default function HomePage() {
           <div className="relative flex justify-center lg:justify-end animate-slide-in-right">
             <div className="relative">
               {/* Main profile image */}
-              <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-2xl border-4 border-silver-300 animate-glow">
+              <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden shadow-2xl border-4 border-silver-300 animate-glow">
                 <Image
                   src="/images/yash-profile-1.png"
                   alt="Yash Verma Profile"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-110"
                 />
-              </div>
-
-              {/* Secondary profile image - floating - hidden on mobile */}
-              <div
-                className="absolute -bottom-8 -right-8 w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full overflow-hidden shadow-xl border-3 border-red-400 animate-float glass-effect hidden sm:block"
-                style={{ animationDelay: "1s" }}
-              >
-                <Image src="/images/yash-profile-2.png" alt="Yash Verma Secondary" fill className="object-cover" />
               </div>
 
               {/* Decorative elements */}

@@ -18,8 +18,8 @@ export function Header() {
   ]
 
   return (
-    <header className="fixed top-0 z-50 w-full glass-effect border-b border-silver-400/30 bg-black/20">
-      <div className="container flex h-20 items-center justify-between px-4 md:px-6">
+    <header className="fixed top-0 z-50 w-full glass-effect border-b border-silver-400/30 bg-black/40 backdrop-blur-md">
+      <div className="container flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 text-2xl font-bold">
           <span className="text-white font-bold drop-shadow-lg">Yashu</span>
         </Link>

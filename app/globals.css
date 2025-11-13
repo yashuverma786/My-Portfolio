@@ -85,7 +85,13 @@
   }
 
   .glass-effect {
-    @apply backdrop-blur-md bg-white/10 border border-white/20;
+    @apply backdrop-blur-sm bg-white/5 border border-white/10;
+  }
+
+  @media (min-width: 768px) {
+    .glass-effect {
+      @apply backdrop-blur-md bg-white/10 border border-white/20;
+    }
   }
 
   .floating-shapes {
@@ -164,6 +170,53 @@
     .floating-shapes::after {
       width: 100px;
       height: 100px;
+    }
+  }
+
+  /* Performance optimizations for mobile */
+  @media (max-width: 768px) {
+    .animate-float,
+    .animate-glow,
+    .animate-gradient-shift {
+      animation-duration: 4s;
+    }
+
+    .floating-shapes::before,
+    .floating-shapes::after {
+      animation-duration: 6s;
+    }
+  }
+
+  /* Reduce animations on low-end devices */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-bounce,
+    .animate-fade-in-up,
+    .animate-scale-in,
+    .animate-slide-in-left,
+    .animate-slide-in-right,
+    .animate-glow,
+    .animate-gradient-shift {
+      animation: none;
+    }
+
+    .floating-shapes::before,
+    .floating-shapes::after {
+      animation: none;
+    }
+  }
+
+  /* Smooth scrolling optimization */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better mobile touch targets */
+  @media (max-width: 768px) {
+    button,
+    a {
+      min-height: 44px;
+      min-width: 44px;
     }
   }
 }
