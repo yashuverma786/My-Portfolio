@@ -19,7 +19,7 @@ export default function ProjectsPage() {
         "A dynamic travel booking platform featuring destination search, trip planning, and booking management. Powered by WordPress with custom functionality.",
       technologies: ["WordPress", "PHP", "Elementor", "WooCommerce", "JavaScript"],
       imageUrl: "/images/jmt-travel-screenshot.png",
-      liveUrl: "https://jmt.travel/",
+      liveUrl: "https://jmttravel.in/",
       githubUrl: "#",
     },
     {
